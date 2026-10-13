@@ -1,0 +1,6 @@
+.env
+
+volume/data/*
+!volume/data/.gitkeep
+
+.DS_Store

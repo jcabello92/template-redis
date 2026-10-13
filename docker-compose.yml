@@ -1,0 +1,21 @@
+name: ${PROJECT_NAME}-redis
+
+services:
+  redis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ${PROJECT_NAME}-redis
+    restart: always
+    env_file:
+      - .env
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - ./volume/data:/data
+    networks:
+      - template_network
+
+networks:
+  template_network:
+    external: true
+    name: ${PROJECT_NAME}-network

@@ -1,0 +1,8 @@
+.env
+.env.*
+.gitignore
+
+.git/
+volume/
+
+.DS_Store
